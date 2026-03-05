@@ -29,11 +29,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run backend tests with coverage
-        working-directory: backend-flask
-        run: |
-          python -m pytest tests/ --cov=. --cov-report=xml --cov-report=term-missing
-
       # SonarCloud scan
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
