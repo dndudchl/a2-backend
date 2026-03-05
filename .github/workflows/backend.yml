@@ -41,14 +41,15 @@ jobs:
         run: |
           pip install flask flask-cors
           python app.py & 
-          sleep 5 # 
+          sleep 15 
+          cat flask.log
       - name: Fix workspace permissions
         run: chmod -R 777 .
     
       - name: ZAP Scan 
         uses: zaproxy/action-baseline@v0.12.0
         with:
-          target: 'http://127.0.0.1:5000/'
+          target: 'http://127.0.0.1:4000/'
           fail_action: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
