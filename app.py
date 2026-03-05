@@ -104,6 +104,12 @@ def first():
 
     return jsonify({'message': 'Backend flask app running'}), 200
 
+@app.route('/login')
+def login():
+    username = request.args.get('username')
+    query = f"SELECT * FROM users WHERE id='{username}'"
+    return query
+
 
 @app.route('/api', methods=['GET'])
 def api_route():
