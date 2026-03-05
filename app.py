@@ -105,7 +105,7 @@ def first():
     return jsonify({'message': 'Backend flask app running'}), 200
 
 @app.route('/login')
-def login():
+def login2():
     username = request.args.get('username')
     query = f"SELECT * FROM users WHERE id='{username}'"
     return query
