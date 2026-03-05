@@ -49,7 +49,7 @@ jobs:
       - name: ZAP Scan 
         uses: zaproxy/action-baseline@v0.12.0
         with:
-          target: 'http://127.0.0.1:4000/login?username'
+          target: 'http://127.0.0.1:4000/login?'
           fail_action: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
