@@ -41,8 +41,8 @@ jobs:
         run: |
           pip install flask flask-cors
           python app.py & 
-          sleep 15 
-          cat flask.log
+          sleep 10 
+
       - name: Fix workspace permissions
         run: chmod -R 777 .
     
